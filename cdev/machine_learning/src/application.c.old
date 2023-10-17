@@ -1,0 +1,61 @@
+#include <stdmoh.h>
+#include <stderr.h>
+
+
+real64_t train[][2UL] = { 
+    { 0., -1. },
+    { 1.,  1. },
+    { 2.,  3. },
+    { 3.,  5. },
+    { 4.,  7. }
+};
+real64_t rate = 1e-5, eps = 1e-14;
+
+
+real64_t lost_func(real64_t w, real64_t b);
+
+
+int32_t main(int32_t argc, string_t argv[])
+{
+    puts("Salam Alicom");
+
+    srand(time());
+    // srand(65536U);
+
+    real64_t w = ((real64_t)rand() / (real64_t)RAND_MAX) * 10.;
+    real64_t b = ((real64_t)rand() / (real64_t)RAND_MAX) * 5.;
+    real64_t dw = 1., db = 1., tmp;
+    printf("w: %10.7lf, b: %10.7lf\n\n", w, b);
+
+    uint64_t step = 0UL;
+    while ((dw*dw + db*db) > eps)
+    {
+        tmp = lost_func(w, b);
+        dw = (lost_func(w + eps, b) - tmp) / eps;
+        db = (lost_func(w, b + eps) - tmp) / eps;
+        // printf("Lost[%lu]: dw:%10.7lf, db:%10.7lf\n", step++, dw, db);
+
+        // printf("w: %10.7lf, b: %10.7lf\n", w, b);
+        w -= rate * dw;
+        b -= rate * db;
+        // printf("w: %10.7lf, b: %10.7lf\n", w, b);
+    }
+
+    printf("[%lu]: w: %10.7lf, b: %10.7lf\n", step, w, b);
+    return 0;
+}
+
+
+real64_t lost_func(real64_t w, real64_t b)
+{
+    real64_t result = 0.;
+    uint32_t train_data_count = sizeof(train) / sizeof(train[0UL]);
+
+    for (size_t i = 0UL; i < train_data_count; i++)
+    {
+        real64_t avrg_dist = train[i][1UL] - (train[i][0UL] * w + b);
+        result += avrg_dist * avrg_dist;
+    }
+
+    return result / (real64_t)train_data_count;
+}

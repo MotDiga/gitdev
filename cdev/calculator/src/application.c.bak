@@ -1,0 +1,36 @@
+#include <stdmoh.h>
+#include <stderr.h>
+#include "parser.h"
+#include "stdlog.h"
+
+
+#ifdef _TESTS
+
+#include "tests.h"
+
+    int32_t main(int32_t argc, string_t argv[])
+    {
+        log_colorwhite("\nSalam Alicom\n\n");
+
+        rshift_test();
+        lshift_test();
+
+        return 0;
+    }
+
+#else
+
+    int32_t main(int32_t argc, string_t argv[])
+    {
+        log_colorwhite("\nSalam Alicom\n\n");
+
+        // //TODO: to improve
+        // while (true)
+        // {
+        //     parser(argc, argv);
+        // }
+
+        return 0;
+    }
+
+#endif

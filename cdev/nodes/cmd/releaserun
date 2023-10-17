@@ -1,0 +1,10 @@
+#!/bin/bash
+
+./release
+    if [ $? -ne 0 ]; then exit 1; fi
+
+printf '\n\x1b[32;1m'
+printf 'Runing:\n'
+printf '\n\x1b[0m'
+
+./runrelease $@

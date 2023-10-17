@@ -1,0 +1,6 @@
+#ifndef   STDFILE_H_INCLUDED
+#define   STDFILE_H_INCLUDED
+
+//!
+
+#endif // STDFILE_H_INCLUDED

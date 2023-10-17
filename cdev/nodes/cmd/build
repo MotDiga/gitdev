@@ -1,0 +1,65 @@
+#!/bin/bash
+
+srcdir='src/'
+objdir='bin-obj/debug/'
+bindir='bin/debug/'
+appname='nodes'
+
+function _compile {
+        printf '\x1b[32m'
+        printf "gcc -o ${objdir}${1}.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Og -g3 -c ${srcdir}${1}.c\n\x1b[0m"
+                gcc -o ${objdir}${1}.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Og -g3 -c ${srcdir}${1}.c
+                if [ ${?} -ne 0 ]; then exit 1; fi
+}
+
+function _link {
+        printf '\x1b[32m'
+        printf "gcc -o ${bindir}${appname} -Wall -Wextra -Llib ${@} -lm -ldl -lpthread -lGL -lGLU -lGLEW -lglfw\n\x1b[0m"
+                gcc -o ${bindir}${appname} -Wall -Wextra -Llib ${@} -lm -ldl -lpthread -lGL -lGLU -lGLEW -lglfw
+                if [ ${?} -ne 0 ]; then exit 1; fi
+}
+
+cd ..
+
+printf '\x1b[32;1m'
+printf 'Starting\n\n'
+printf 'Compiling:\n'
+printf '\x1b[0m'
+printf '\x1b[32m'
+
+_compile application
+_compile advencenode
+_compile bignum
+_compile bintree
+_compile hashtab
+_compile node
+_compile rsa
+_compile shader
+_compile sorting
+_compile stdlog
+_compile stdmath
+_compile stdstr
+_compile stdtime
+
+mkdir bin-obj/debug/tests 2> /dev/null
+_compile tests/advencenode_tests
+_compile tests/bignum_tests
+_compile tests/node_tests
+_compile tests/rsa_tests
+_compile tests/shader_tests
+_compile tests/sorting_tests
+_compile tests/stdstr_tests
+_compile tests/stdmath_tests
+_compile tests/stdtime_tests
+
+printf '\n\x1b[32;1m'
+printf 'Linking:\n'
+
+_link ${objdir}*.o ${objdir}tests/*.o
+cp -rf rcs ${bindir} 2> /dev/null
+
+printf '\n\x1b[32;1m'
+printf 'Done\n'
+printf '\x1b[0m'
+
+cd cmd

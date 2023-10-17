@@ -1,0 +1,12 @@
+#!/bin/bash
+cd ..
+
+sudo rm -fr bin/debug/*
+sudo rm -fr bin/release/*
+sudo rm -fr bin-obj/debug/*
+sudo rm -fr bin-obj/release/*
+sudo rm -fr rcs/logs/debug/*
+sudo rm -fr rcs/logs/release/*
+sudo rm -fr rcs/tmp/*
+
+cd cmd

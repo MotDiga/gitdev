@@ -1,0 +1,6 @@
+#!/bin/bash
+cd ..
+
+./bin/debug/calculator $@
+
+cd cmd

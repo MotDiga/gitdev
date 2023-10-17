@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./build
+
+cd ..
+
+gdb bin/debug/mathbox
+
+cd cmd

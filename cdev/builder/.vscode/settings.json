@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stdmoh.h": "c",
+        "stderr.h": "c"
+    }
+}

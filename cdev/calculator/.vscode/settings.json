@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "bignum.h": "c",
+        "stdmoh.h": "c",
+        "stdio.h": "c",
+        "bit": "c",
+        "stderr.h": "c",
+        "parser.h": "c",
+        "tests.h": "c",
+        "ttmath.h": "c",
+        "resource.h": "c",
+        "time.h": "c",
+        "types.h": "c",
+        "string_view": "c"
+    }
+}
