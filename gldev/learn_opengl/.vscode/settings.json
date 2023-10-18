@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "stdmoh.h": "c",
+        "array": "c",
+        "compare": "c",
+        "functional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "ranges": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "stb_image.h": "c",
+        "renderer.h": "c",
+        "cglm.h": "c",
+        "vec2.h": "c",
+        "sandbox.h": "c",
+        "sandboxresources.h": "c"
+    }
+}

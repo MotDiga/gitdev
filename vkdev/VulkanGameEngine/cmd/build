@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cd ..
+
+echo 'Starting...'
+echo 'Compiling:'
+echo "gcc -o bin_obj/debug/main.o -std=c11 -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Og -g3 -c src/main.c"
+      gcc -o bin_obj/debug/main.o -std=c11 -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Og -g3 -c src/main.c
+
+printf '\n'
+echo 'Linking:'
+echo 'gcc -o bin/debug/VulkanGameEngine -Wall -Wextra -Llib bin_obj/debug/main.o -lpthread -lX11 -lXxf86vm -lXrandr -lXi -lm -ldl -lglfw -lvulkan'
+      gcc -o bin/debug/VulkanGameEngine -Wall -Wextra -Llib bin_obj/debug/main.o -lpthread -lX11 -lXxf86vm -lXrandr -lXi -lm -ldl -lglfw -lvulkan
+
+printf '\n'
+echo 'Done.'
+
+cd cmd

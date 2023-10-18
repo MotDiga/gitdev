@@ -1,0 +1,30 @@
+#!/bin/bash
+cd ..
+
+printf '\x1b[32;1m'
+printf 'Starting...\n'
+printf 'Compiling:\n'
+printf '\x1b[0m'
+printf '\x1b[32m'
+printf 'gcc -o bin-obj/debug/application.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Wall -Og -g3 -m64 -c src/application.c\n\x1b[0m'
+        gcc -o bin-obj/debug/application.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Wall -Og -g3 -m64 -c src/application.c
+
+        mkdir bin-obj/debug/renderer 2> /dev/null
+printf '\x1b[32m'
+printf 'gcc -o bin-obj/debug/renderer/renderer.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Wall -Og -g3 -m64 -c src/renderer/renderer.c\n\x1b[0m'
+        gcc -o bin-obj/debug/renderer/renderer.o -Wall -Wextra -D_DEBUG -Iinclude -Isrc -Wall -Og -g3 -m64 -c src/renderer/renderer.c
+
+printf '\n\x1b[32;1m'
+printf 'Linking:\n'
+printf '\x1b[0m'
+printf '\x1b[32m'
+printf 'gcc -o bin/debug/application -Wall -Wextra -m64 -Llib bin-obj/debug/application.o bin-obj/debug/renderer/renderer.o -lm -ldl -lGL -lGLU -lGLEW -lglfw\n\x1b[0m'
+        gcc -o bin/debug/application -Wall -Wextra -m64 -Llib bin-obj/debug/application.o bin-obj/debug/renderer/renderer.o -lm -ldl -lGL -lGLU -lGLEW -lglfw
+
+        cp -rf rcs bin/debug/ 2> /dev/null
+
+printf '\n\x1b[32;1m'
+printf 'Done.\n'
+printf '\x1b[0m'
+
+cd cmd

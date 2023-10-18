@@ -1,0 +1,19 @@
+#!/bin/bash
+cd ..
+
+echo 'Starting...'
+echo 'Compiling:'
+echo 'g++ -o obj/release/main.o -Iinclude -Isrc -Wall -O3 -c src/main.cpp'
+      g++ -o obj/release/main.o -Iinclude -Isrc -Wall -O3 -c src/main.cpp
+
+printf '\n'
+echo 'Linking:'
+echo 'g++ -o bin/release/test -Llib -s obj/release/main.o'
+      g++ -o bin/release/test -Llib -s obj/release/main.o
+
+      cp -rf rcs bin/release/
+
+printf '\n'
+echo 'Done.'
+
+cd cmd

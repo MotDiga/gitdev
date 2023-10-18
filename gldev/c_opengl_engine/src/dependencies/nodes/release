@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -o nodes -std=c11 -O2 -Wall -Wextra -D_RELEASE *.c tests/*.c -lm

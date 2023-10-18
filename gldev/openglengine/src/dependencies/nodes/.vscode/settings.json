@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "tests.h": "c",
+        "limits": "c",
+        "stb_image.h": "c",
+        "cglm.h": "c",
+        "mat4.h": "c",
+        "project.h": "c",
+        "stdmath.h": "c",
+        "stdstr.h": "c",
+        "advencenode.h": "c",
+        "stdio.h": "c",
+        "node.h": "c",
+        "stdmoh.h": "c",
+        "stdtime.h": "c",
+        "type_traits": "c",
+        "common.h": "c",
+        "types.h": "c",
+        "intrin.h": "c",
+        "x86.h": "c",
+        "vec2.h": "c",
+        "cam.h": "c",
+        "quat.h": "c",
+        "euler.h": "c"
+    }
+}

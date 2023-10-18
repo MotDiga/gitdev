@@ -1,0 +1,7 @@
+#!/bin/bash
+cd ..
+
+sudo rm -rf obj/debug/*
+sudo rm -rf obj/release/*
+sudo rm -rf bin/debug/*
+sudo rm -rf bin/release/*

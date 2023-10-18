@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd ..
+
+trash bin/debug/VulkanGameEngine
+trash bin/release/VulkanGameEngine
+trash bin_obj/debug/*
+trash bin_obj/release/*
+
+cd cmd

@@ -1,0 +1,19 @@
+#!/bin/bash
+cd ..
+
+echo 'Starting...'
+echo 'Compiling:'
+echo 'g++ -o obj/debug/main.o -Iinclude -Isrc -Wall -Og -g3 -DDEBUG -c src/main.cpp'
+      g++ -o obj/debug/main.o -Iinclude -Isrc -Wall -Og -g3 -DDEBUG -c src/main.cpp
+
+printf '\n'
+echo 'Linking:'
+echo 'g++ -o bin/debug/test -Llib obj/debug/main.o -lm'
+      g++ -o bin/debug/test -Llib obj/debug/main.o -lm
+
+      cp -rf rcs bin/debug/
+
+printf '\n'
+echo 'Done.'
+
+cd cmd

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd ..
+
+./bin/release/VulkanGameEngine
+
+cd cmd

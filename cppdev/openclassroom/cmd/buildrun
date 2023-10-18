@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./build
+
+echo 'Runing:'
+./runbuild

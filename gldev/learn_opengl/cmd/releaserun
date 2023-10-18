@@ -1,0 +1,7 @@
+#!/bin/bash
+
+./release
+printf '\n\x1b[32;1m'
+printf 'Runing:\n'
+printf '\n\x1b[0m'
+./runrelease

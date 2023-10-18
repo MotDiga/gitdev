@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -o nodes -std=c11 -Og -g3 -Wall -Wextra -D_DEBUG *.c tests/*.c -lm

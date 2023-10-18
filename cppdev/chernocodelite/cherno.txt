@@ -1,0 +1,1 @@
+bin-obj/cherno-x86_64-Debug/src_Main.cpp.o

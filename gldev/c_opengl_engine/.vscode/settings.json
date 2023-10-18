@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "nodes.h": "c",
+        "glew.h": "c",
+        "stdmoh.h": "c",
+        "stderr.h": "c"
+    }
+}
