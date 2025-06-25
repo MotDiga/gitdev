@@ -1,0 +1,15 @@
+#!/bin/bash
+cd ..
+
+echo 'Starting...'
+echo 'Compiling:'
+echo 'g++ -o obj/debug/main.o -Iinclude -Llib -Wall -Og -g3 -c src/main.cpp'
+      g++ -o obj/debug/main.o -Iinclude -Llib -Wall -Og -g3 -c src/main.cpp
+
+printf '\n'
+echo 'Linking:'
+echo 'g++ -o bin/debug/app -Iinclude -Llib -Wall -Og -g3 obj/debug/main.o -lGL -lGLU -lGLEW -lglfw'
+      g++ -o bin/debug/app -Iinclude -Llib -Wall -Og -g3 obj/debug/main.o -lGL -lGLU -lGLEW -lglfw
+
+printf '\n'
+echo 'Done.'

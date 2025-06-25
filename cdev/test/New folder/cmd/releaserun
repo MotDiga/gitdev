@@ -1,0 +1,16 @@
+#!/bin/bash
+cd ..
+
+echo 'Starting...'
+echo 'Compiling:'
+echo 'g++ -o obj/release/main.o -Iinclude -Llib -Wall -O3 -s -c src/main.cpp'
+      g++ -o obj/release/main.o -Iinclude -Llib -Wall -O3 -s -c src/main.cpp
+
+printf '\n'
+echo 'Linking:'
+echo 'g++ -o bin/release/app -Iinclude -Llib -Wall -O3 -s obj/release/main.o -lGL -lGLU -lGLEW -lglfw'
+      g++ -o bin/release/app -Iinclude -Llib -Wall -O3 -s obj/release/main.o -lGL -lGLU -lGLEW -lglfw
+
+printf '\n'
+echo 'Runing:'
+./bin/release/app
